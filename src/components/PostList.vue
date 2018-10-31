@@ -29,10 +29,15 @@
             </span>
           </span>
 
-          <!--标题-->
-          <span class="title">
-          {{post.title}}
-          </span>
+          <router-link :to="{
+            name:'postContent',
+            params: { id: post.id, name:post.author.loginname }
+          }">
+            <!--标题-->
+            <span class="title">
+            {{post.title}}
+            </span>
+          </router-link>
 
           <!--最終回复时间-->
           <span class="lastReply">
@@ -138,17 +143,6 @@
     color: #778087;
     font-size: 12px;
   }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

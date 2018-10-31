@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <v-header></v-header>
-    <div>
-      <v-postList></v-postList>
+    <div class="main">
+      <router-view name="main"></router-view>
+      <!--<v-postList></v-postList>-->
     </div>
   </div>
 </template>
@@ -15,7 +16,7 @@
     name: 'App',
     components: {
       'v-header': Header,
-      'v-postList': PostList,
+      // 'v-postList': PostList,
     }
 
   }
