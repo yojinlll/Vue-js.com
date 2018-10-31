@@ -54,7 +54,7 @@
     width: 120px;
     height: 45px;
     padding-right: 20px;
-    margin-left: -10px;
+    margin: 0 20px 0 10px;
 
     text-decoration: none;
     font-size: 20px;
@@ -69,11 +69,11 @@
   }
   .brand > .text{
     line-height: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 0;
   }
   .search{
     position: relative;
+
   }
   .search img{
     position: absolute;
@@ -87,8 +87,8 @@
     border-radius: 20px;
     padding: 4px 0 4px 22px;
     background: #4f9639;
-    height: 20px;
-    width: 206px;
+    height: 28px;
+    width: 220px;
     border: 0;
     transition: all 0.5s;
   }
@@ -110,9 +110,8 @@
     line-height: 10px;
   }
   .navigation > li > a{
-    text-decoration: none;
     color: #eee;
-    font-size: 14px;
+    font-size: 13px;
     text-shadow: none;
   }
 </style>
