@@ -20,22 +20,15 @@
         <div class="topBar">回复</div>
         <div v-for="(reply,index)  in post.replies" class="replySec">
           <div class="replyUp">
-            <!--<router-link :to="{-->
-            <!--name:'user_info',-->
-            <!--params:{-->
-              <!--name:reply.author.loginname-->
-            <!--}-->
-            <!--}">-->
+            <router-link :to="{
+              name:'user_info',
+              params:{
+                name:reply.author.loginname
+              }
+            }">
               <img :src="reply.author.avatar_url" alt="">
-            <!--</router-link>-->
-            <!--<router-link :to="{-->
-            <!--name:'user_info',-->
-            <!--params:{-->
-              <!--name:reply.author.loginname-->
-            <!--}-->
-            <!--}">-->
               <span>{{reply.author.loginname}}</span>
-            <!--</router-link>-->
+            </router-link>
               <span>
                 {{index+1}}楼
               </span>
@@ -76,12 +69,17 @@
     beforeMount(){
       this.getArticleData();
     },
+    watch:{
+      '$route'(to,from){
+        this.getArticleData()
+      }
+    }
 
   }
 </script>
 
 <style>
-  @import url('../assets/markdown-github.css');
+  @import url('../assets/vue-markdown.css');
   .articleWrapper{
     min-width: 690px;
     min-height: 660px;

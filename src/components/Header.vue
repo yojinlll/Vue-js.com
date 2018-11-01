@@ -73,8 +73,6 @@
   }
   .search{
     position: relative;
-    top: 5px;
-
   }
   .search img{
     position: absolute;
