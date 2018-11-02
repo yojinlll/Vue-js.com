@@ -1,6 +1,7 @@
 <template>
   <div class="userInfoWrapper">
     <div class="userInfo">
+      <p class="top-p">主页</p>
       <section>
         <img :src="userinfo.avatar_url">
         <span>{{userinfo.loginname}}</span>
@@ -57,7 +58,6 @@
       getData(){
         this.$http.get(`https://www.vue-js.com/api/v1/user/${this.$route.params.name}`)
           .then(res => {
-            console.log(3333333)
             this.userinfo = res.data.data
           })
           .catch(function (err){
@@ -74,16 +74,10 @@
 
 <style scoped>
   .userInfoWrapper {
-    min-width: 690px;
-    min-height: 660px;
-    width: 90%;
-    margin: 15px auto;
+    background: white;
   }
 
   .userInfo {
-    background: white;
-    width: 75%;
-    margin: 10px auto;
   }
 
   .userInfo section {
@@ -104,7 +98,7 @@
   .userInfo .topics {
     border-top: 10px #DDDDDD solid;
   }
-
+  .userInfo > .top-p,
   .userInfo > div > p {
     padding: 12px 0 12px 12px;
     background-color: rgba(212, 205, 205, 0.17);

@@ -13,7 +13,14 @@
         </li>
         <li v-for="post in posts">
           <!--头像-->
-          <img :src="post.author.avatar_url" alt="">
+          <router-link :to="{
+              name:'user_info',
+              params:{
+                name:post.author.loginname
+              }
+            }">
+            <img :src="post.author.avatar_url" alt="">
+          </router-link>
 
           <!--回复/浏览-->
           <span class="allCount">
@@ -44,7 +51,9 @@
           {{post.last_reply_at | formatDate}}
           </span>
         </li>
-        <li>pagination</li>
+        <li>
+          <v-Pagination @handleList="renderList"></v-Pagination>
+        </li>
       </ul>
     </div>
 
@@ -52,17 +61,22 @@
 </template>
 
 <script>
+  import Pagination from './Pagination'
+
   export default {
     name: "VPostList",
+    components:{
+      'v-Pagination': Pagination,
+    },
     data(){
       return {
         posts: [],
+        userinfo: [],
         postPage: 1
       }
     },
     methods: {
       getData(){
-        console.log(1111111111)
         this.$http.get('https://www.vue-js.com/api/v1/topics', {
           params: {
             page: this.postPage,
@@ -71,16 +85,15 @@
         })
           .then(res => {
             this.posts = res.data.data
-            console.log(this.posts)
           })
           .catch(function (err){
             console.log(err)
           })
       },
-      // renderList(value){
-      // this.postpage = value;
-      // this.getData();
-      // }
+      renderList(value){
+      this.postPage = value;
+      this.getData();
+      }
     },
     beforeMount(){
       this.getData()//在页面加载之前获取数据
@@ -90,9 +103,12 @@
 <style scoped>
   .postList{
     background: white;
-    min-width: 690px;
-    width: 90%;
-    margin: 15px auto;
+    /*min-width: 690px;*/
+    /*width: 90%;*/
+    /*margin: 15px auto;*/
+    /*max-width: 900px;*/
+    /*background: white;*/
+    /*margin-right: 20px;*/
   }
   .posts img{
     border-radius: 4px;
@@ -105,6 +121,7 @@
   .posts li:first-child{ border-radius: 3px 3px 0 0; background: #f6f6f6;}
   .posts li:last-child{ border-radius: 0 0 3px 3px; border-top: none;}
   .posts li:not(:first-child):hover { background: #f6f6f6; }
+  .posts li:last-child:hover { background: white; }
 
   .posts li > .allCount{
     display: inline-block;
@@ -118,7 +135,14 @@
     color: #9e78c0;
     font-size: 14px;
   }
-  .postList li > .title:hover{
+  .postList .title{
+    display: inline-block;
+    width: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .postList .title:hover{
     cursor: pointer;
     text-decoration: underline;
   }
@@ -130,7 +154,7 @@
     cursor: pointer;
   }
   .postList .topBar > span:hover{
-    color: rgba(0, 85, 128);
+    color: rgb(0, 85, 128);
   }
 
 

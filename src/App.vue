@@ -2,23 +2,26 @@
   <div id="app">
     <v-header></v-header>
     <div class="main">
-      <router-view name="main"></router-view>
-      <!--<v-postList></v-postList>-->
+      <div class="content">
+        <router-view name="main"></router-view>
+      </div>
+      <div class="sliderBar">
+        <router-view name="sliderBar"></router-view>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
   import Header from './components/Header'
-  import PostList from './components/PostList'
+
+  // Vue.prototype.event
 
   export default {
     name: 'App',
     components: {
       'v-header': Header,
-      // 'v-postList': PostList,
-    }
-
+    },
   }
 </script>
 
@@ -31,5 +34,21 @@
     margin: 0;
     background: #e1e1e1;
     font-family: "Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB",STHeiti!important;
+  }
+
+  .main{
+    min-width: 690px;
+    width: 88%;
+    margin: 15px auto;
+    display: flex;
+  }
+  .main > .content{
+    /*background: white;*/
+    width:75%;
+    margin-right: 20px;
+  }
+  .main > .sliderBar{
+    /*display: none;*/
+    width: 25%;
   }
 </style>

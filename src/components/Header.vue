@@ -2,12 +2,14 @@
   <div class="header">
     <div class="wrapper">
       <div class="container">
-        <a class="brand" href="#">
-          <img src="../assets/vue.png" >
-          <div class="text">
-            Vue.js
-          </div>
-        </a>
+        <router-link  :to="{name:'root'}">
+          <a class="brand">
+            <img src="../assets/vue.png" >
+            <div class="text">
+              Vue.js
+            </div>
+          </a>
+        </router-link>
         <form class="search">
           <img src="../assets/search.png" >
           <input type="text">
@@ -29,7 +31,7 @@
 
 <script>
   export default {
-    name: "VHeader"
+    name: "VHeader",
   }
 </script>
 

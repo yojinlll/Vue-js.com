@@ -58,7 +58,6 @@
           .then((res)=>{
             if(res.data){
               this.post = res.data.data;
-              console.log(this.post)
             }
           })
           .catch(function (err) {
@@ -81,10 +80,10 @@
 <style>
   @import url('../assets/vue-markdown.css');
   .articleWrapper{
-    min-width: 690px;
-    min-height: 660px;
-    width: 90%;
-    margin: 15px auto;
+    /*min-width: 690px;*/
+    /*min-height: 660px;*/
+    /*width: 80%;*/
+    /*margin: 15px auto;*/
   }
   .article{
     background: white;
@@ -117,7 +116,6 @@
   /*回复区*/
   #reply{
     background: white;
-    margin: 13px 0;
   }
   #reply .topBar{
     padding: 10px;
