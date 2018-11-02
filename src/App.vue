@@ -36,8 +36,9 @@
     font-family: "Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB",STHeiti!important;
   }
 
+
   .main{
-    min-width: 690px;
+    /*min-width: 690px;*/
     width: 88%;
     margin: 15px auto;
     display: flex;
@@ -48,7 +49,15 @@
     margin-right: 20px;
   }
   .main > .sliderBar{
-    /*display: none;*/
     width: 25%;
+  }
+
+  @media(max-width: 960px){
+    .main {width: 98%; min-width: 100px;}
+    .main > .content{width: 100%;}
+    .main > .sliderBar{
+      display: none;
+    }
+
   }
 </style>

@@ -2,18 +2,18 @@
   <div class="header">
     <div class="wrapper">
       <div class="container">
-        <router-link  :to="{name:'root'}">
-          <a class="brand">
-            <img src="../assets/vue.png" >
-            <div class="text">
-              Vue.js
-            </div>
-          </a>
-        </router-link>
-        <form class="search">
-          <img src="../assets/search.png" >
-          <input type="text">
-        </form>
+          <router-link  :to="{name:'root'}">
+            <a class="brand">
+              <img src="../assets/vue.png" >
+              <div class="text">
+                Vue.js
+              </div>
+            </a>
+          </router-link>
+          <form class="search">
+            <img src="../assets/search.png" >
+            <input type="text">
+          </form>
         <ul class="navigation">
           <li><a href="#">首页</a></li>
           <li><a href="#">微信公众号</a></li>
@@ -48,10 +48,10 @@
     display: flex;
     align-items: center;
     padding: 5px;
+
     min-width: 960px;
   }
   .brand{
-    display: block;
     display: flex;
     width: 120px;
     height: 45px;
@@ -114,5 +114,36 @@
     color: #eee;
     font-size: 13px;
     text-shadow: none;
+  }
+
+
+  /*响应式*/
+  @media (max-width: 960px) {
+    .container{
+      min-width: 0;
+      display: block;
+      position: relative;
+    }
+    .navigation{
+      position: unset;
+    }
+    .search{
+      position: absolute;
+      top:12%;
+      left: 160px;
+    }
+  }
+  @media (max-width: 424px) {
+    .brand{
+      margin: 0 auto;
+    }
+    .search{
+      position: unset;
+      text-align: center;
+    }
+    .search img{
+      display: none;
+    }
+
   }
 </style>

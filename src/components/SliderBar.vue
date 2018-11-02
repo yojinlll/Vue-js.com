@@ -4,17 +4,19 @@
 
       <div class="community-1">
         <div class="topbar">社区交流群</div>
-        <img src="https://user-images.githubusercontent.com/9276376/30367105-de95534e-989f-11e7-8c43-039222352121.png" alt="">
-        <img src="https://cloud.githubusercontent.com/assets/9276376/20613626/b317ca38-b300-11e6-940d-33df210cb7ba.png" alt="">
+        <div class="weixin-img">
+          <img src="https://user-images.githubusercontent.com/9276376/30367105-de95534e-989f-11e7-8c43-039222352121.png" alt="">
+          <img src="https://cloud.githubusercontent.com/assets/9276376/20613626/b317ca38-b300-11e6-940d-33df210cb7ba.png" alt="">
+        </div>
       </div>
       <div class="community-2">
         <div class="topbar">友情社区</div>
         <div>
-          <p><a href="">微信小程序学习社群</a></p>
-          <p><a href="">CTOLib码库</a></p>
-          <p><a href="">汇智网</a></p>
-          <p><a href="">w3c社区-前端专业综合性技术交流平台</a></p>
-          <p><a href="">掘金-帮助开发者成长的社区</a></p>
+          <p><a href="https://www.getweapp.com/">微信小程序学习社群</a></p>
+          <p><a href="http://www.ctolib.com/">CTOLib码库</a></p>
+          <p><a href="https://www.hubwiz.com/">汇智网</a></p>
+          <p><a href="https://www.w3cvip.org">w3c社区-前端专业综合性技术交流平台</a></p>
+          <p><a href="https://juejin.im">掘金-帮助开发者成长的社区</a></p>
         </div>
       </div>
     </div>
@@ -103,13 +105,11 @@
     },
     beforeMount(){
       this.getData()//在页面加载之前获取数据
-      console.log(this.$route.params, 22222222222)
       this.sliderBarToggle = this.$route.params.id ? false : true
     },
     watch: {
       '$route'(to, from){
         this.getData()
-        console.log(this.$route.params, 33333333333)
         this.sliderBarToggle = this.$route.params.id ? false : true
       }
     }
@@ -170,7 +170,10 @@
     background: white;
     border-radius: 3px;
   }
-  .community-1 img{
+  .community-1 .weixin-img{
+    text-align: center;
+  }
+  .community-1 .weixin-img > img{
     width: 135px;
     padding: 10px 5px 10px 5px;
   }

@@ -197,4 +197,11 @@
   }
 
 
+
+  @media(max-width: 960px){
+    .postList ul > li > .allCount{
+      color: red;
+      display: none;
+    }
+  }
 </style>
