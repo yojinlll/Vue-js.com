@@ -5,8 +5,8 @@
       <div class="community-1">
         <div class="topbar">社区交流群</div>
         <div class="weixin-img">
-          <img src="https://user-images.githubusercontent.com/9276376/30367105-de95534e-989f-11e7-8c43-039222352121.png" alt="">
-          <img src="https://cloud.githubusercontent.com/assets/9276376/20613626/b317ca38-b300-11e6-940d-33df210cb7ba.png" alt="">
+          <img src="../assets/weixin-1.png" alt="">
+          <img src="../assets/weixin-1.png" alt="">
         </div>
       </div>
       <div class="community-2">
