@@ -141,6 +141,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-bottom: -7px;
   }
   .postList .title:hover{
     cursor: pointer;
@@ -202,6 +203,19 @@
     .postList ul > li > .allCount{
       color: red;
       display: none;
+    }
+    .postList .title {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 500px) {
+    .postList .title {
+      width: 60%;
+    }
+  }
+  @media (max-width: 424px) {
+    .postList .title {
+      width: 50%;
     }
   }
 </style>
